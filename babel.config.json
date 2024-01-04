@@ -15,8 +15,7 @@
         "mangle": false,
         "guards": false,
         "mergeVars": false,
-        "typeConstructors": false,
-        "simplify": false
+        "typeConstructors": false
       }
     ]
   ]
