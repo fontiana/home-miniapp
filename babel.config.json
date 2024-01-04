@@ -18,9 +18,15 @@
         "flipComparisons": false,
         "simplifyComparisons": false,
         "replace": false,
+        "removeUndefined": false,
+        "regexpConstructors": false,
+        "propertyLiterals": false,
+        "numericLiterals": false,
+        "mergeVars": false,
         "undefinedToVoid": false,
         "booleans": false,
         "infinity": false,
+        "typeConstructors": false,
         "simplify": false
       }
     ]
