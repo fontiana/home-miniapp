@@ -20,7 +20,8 @@
         "replace": false,
         "undefinedToVoid": false,
         "booleans": false,
-        "infinity": false
+        "infinity": false,
+        "simplify": false
       }
     ]
   ]
