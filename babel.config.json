@@ -13,7 +13,7 @@
         "builtIns": false,
         "evaluate": false,
         "mangle": false,
-        "guards": false
+        "typeConstructors": false
       }
     ]
   ]
