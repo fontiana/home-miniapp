@@ -19,7 +19,8 @@
         "simplifyComparisons": false,
         "replace": false,
         "undefinedToVoid": false,
-        "booleans": false
+        "booleans": false,
+        "infinity": false
       }
     ]
   ]
