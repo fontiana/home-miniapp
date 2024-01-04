@@ -18,7 +18,8 @@
         "flipComparisons": false,
         "simplifyComparisons": false,
         "replace": false,
-        "undefinedToVoid": false
+        "undefinedToVoid": false,
+        "booleans": false
       }
     ]
   ]
