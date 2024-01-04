@@ -6,14 +6,6 @@
         "useBuiltIns": "entry",
         "corejs": "3.35.0"
       }
-    ],
-    [
-      "minify",
-      {
-        "builtIns": false,
-        "evaluate": false,
-        "mangle": false
-      }
     ]
   ]
 }

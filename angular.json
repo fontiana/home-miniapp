@@ -19,8 +19,7 @@
             "main": "src/main.ts",
             "polyfills": [
               "zone.js",
-              "core-js",
-              "web-animations-js"
+              "core-js"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
