@@ -15,7 +15,8 @@
         "mangle": false,
         "memberExpressions": false,
         "deadcode": false,
-        "flipComparisons": false
+        "flipComparisons": false,
+        "simplifyComparisons": false
       }
     ]
   ]
