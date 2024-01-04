@@ -16,7 +16,9 @@
         "memberExpressions": false,
         "deadcode": false,
         "flipComparisons": false,
-        "simplifyComparisons": false
+        "simplifyComparisons": false,
+        "replace": false,
+        "undefinedToVoid": false
       }
     ]
   ]
