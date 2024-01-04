@@ -13,7 +13,9 @@
         "builtIns": false,
         "evaluate": false,
         "mangle": false,
-        "memberExpressions": false
+        "memberExpressions": false,
+        "deadcode": false,
+        "flipComparisons": false
       }
     ]
   ]
