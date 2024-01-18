@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && babel dist -d dist",
+    "build": "ng build && babel dist -d dist --ignore \"dist/assets\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postbuild": "babel dist -d dist"
