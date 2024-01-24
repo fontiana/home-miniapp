@@ -24,7 +24,15 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "angularCompilerOptions": {
+    "target": "es6",
+    "module": "esnext",
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
