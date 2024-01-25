@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestComponent } from './test/test.component';
+import { PagenotfoundComponentComponent } from './pagenotfound-component/pagenotfound-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    PagenotfoundComponentComponent
   ],
   imports: [
     BrowserModule,
