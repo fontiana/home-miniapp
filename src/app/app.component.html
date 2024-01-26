@@ -1,6 +1,22 @@
 <router-outlet />
 <a class="nav-link" routerLink="/teste2">Teste navegar</a>
 
+<div class="brad-flex brad-flex-justify-content-center brad-font-paragraph-md">
+  <a id="target" class="brad-text-link" onclick="LiquidCorp.BradPopoverService.getInstance({'id': 'popover', 'idTarget': 'target', 'direction': 'bottom'}).toggle();"> OPEN POPOVER!</a>
+</div>
+
+<div class="brad-popover " id="popover" role="dialog" aria-hidden="true">
+  <em class="brad-popover__triangle"></em>
+
+  <div class="brad-popover__content" role="document" tabindex="-1">
+    <p class="brad-popover__title brad-font-title-sm" role="heading">Title content</p>
+
+    <p class="brad-popover__text brad-font-subtitle-xs" role="document">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices venenatis diam a commodo. Maecenas nulla arcu, auctor aliquam mauris non, vehicula eleifend nisl.</p>
+  </div>
+
+  <em role="button" aria-label="Fechar popover" class="brad-popover__close-icon" onclick="LiquidCorp.BradPopoverService.getInstance({'id': 'popover', 'idTarget': 'target', 'direction': 'bottom'}).close()"></em>
+</div>
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img width="40" alt="Angular Logo"
