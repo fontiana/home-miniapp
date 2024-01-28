@@ -9,6 +9,7 @@ declare let LiquidCorp: any;
 })
 export class AppComponent {
   title = 'miniapp';
+  overlayService: any;
 
   ngOnInit() {
     const options = {
@@ -22,5 +23,22 @@ export class AppComponent {
       },
     };
     const service = LiquidCorp.BradCarouselService.getInstance(options);
+
+    this.overlayService = LiquidCorp.BradOverlayService.getInstance({
+      id: "myCanvas",
+      color: "brad-bg-overlay-40"
+    });
+  }
+
+  open(target: string) {
+    this.overlayService.open(target);
+  }
+
+  updateTarget(target: string) {
+    this.overlayService.updateTarget(target);
+  }
+
+  close() {
+    this.overlayService.close();
   }
 }
