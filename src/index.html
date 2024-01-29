@@ -8,17 +8,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- <script src="/assets/scripts-es2015.js?0.4.52" crossorigin="use-credentials" defer=""></script> -->
-  <script src="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/design-system.bundle.min.js"
+  <!-- <script src="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/design-system.bundle.min.js"
     integrity="sha256-aYpl/hxur3zW/DzyER/Ve/m5kWJ1II7oC82wDv1R5io=" crossorigin="anonymous"></script>
   <link href="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/reset.bundle.min.css"
     rel="stylesheet" />
   <link href="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/design-system.bundle.min.css"
-    rel="stylesheet" />
+    rel="stylesheet" /> -->
+    <script
+      src="assets/config/app-config.js?v2"
+      type="application/javascript"
+    ></script>
+ 
+    <link
+      href="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/reset.bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/design-system.bundle.min.css"
+      rel="stylesheet"
+    />
 </head>
 
 <body>
-
   <app-root></app-root>
 </body>
+
+<script
+    src="https://banco.bradesco/cdn/design-system/dist/design-system-1.26.0/design-system.bundle.min.js"
+    integrity="sha256-aYpl/hxur3zW/DzyER/Ve/m5kWJ1II7oC82wDv1R5io="
+    crossorigin="anonymous"
+  ></script>
+ 
+  <script language="JavaScript" type="text/javascript">
+    function checkSdkStorageV2() {
+      return navigator.userAgent.toLowerCase().indexOf("sdkstorage_2") > 0;
+    }
+ 
+    /**
+     * Função para chamar evento voltar (usada pela embarcada)
+     */
+    function getVoltar() {
+      var event;
+      if (typeof Event === "function") {
+        event = new Event("voltar");
+      } else {
+        // compatibilidade IE para teste
+        event = document.createEvent("Event");
+        event.initEvent("voltar", true, true);
+      }
+      window.scrollTo(0, 0);
+      window.dispatchEvent(event);
+    }
+ 
+    function onSuccessGetUserSettingsCallback() {
+      const args = Array.from(arguments);
+      const SDKV2 = checkSdkStorageV2();
+ 
+      let obj = {};
+      const content = SDKV2 ? args[2] : args[0];
+ 
+      if (SDKV2) {
+        obj.project = args[0];
+        obj.key = args[1];
+ 
+        try {
+          obj.value = JSON.parse(content);
+        } catch (error) {
+          obj.value = content;
+        }
+      } else {
+        Object.assign(obj, JSON.parse(content));
+      }
+ 
+      // Dispara o evento generico
+      window.dispatchEvent(
+        new CustomEvent(`${obj.project}-${obj.key}`, { detail: obj.value })
+      );
+    }
+  </script>
 
 </html>
