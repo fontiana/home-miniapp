@@ -41,5 +41,10 @@ export class HomeComponent implements OnInit {
     this.overlayService.close();
   }
 
+  voltar(): void {
+    const urlRetorno = '/';
+    window.location.href = urlRetorno;
+  }
+
 }
  
