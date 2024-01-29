@@ -17,8 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'googleTagManagerId', useValue: 'GTM-555555' }
+  ],
   // providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
