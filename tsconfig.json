@@ -2,6 +2,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "removeComments": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -16,8 +20,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2015",
-    "module": "ES2015",
+    "target": "ES2022",
+    "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
@@ -29,15 +33,7 @@
       "@share/*": ["src/app/share/*"]
     }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
   "angularCompilerOptions": {
-    "target": "es6",
-    "module": "esnext",
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
