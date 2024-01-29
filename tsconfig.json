@@ -34,7 +34,7 @@
     }
   },
   "angularCompilerOptions": {
-    "module": "esnext",
+    "target": "es6",
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
