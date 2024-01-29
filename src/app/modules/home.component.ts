@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { AppConfigService } from "@app/core/services/app-config.service";
+import { bridgeInvoker } from "@app/shared/utils/bridgeInvoker";
 
 declare let LiquidCorp: any;
  
@@ -7,44 +9,17 @@ declare let LiquidCorp: any;
   templateUrl: "./home.component.html",
   styleUrls: [],
 })
-export class HomeComponent implements OnInit { 
-  overlayService: any;
-
-  ngOnInit() {
-    const options = {
-      targetSelector: "#myCarousel",
-      config: {
-        centeredSlides: false,
-        slidesPerView: 2,
-        initialSlide: 1,
-        loop: false,
-        autoplay: { delay: 1000 },
-      },
-    };
-    const service = LiquidCorp.BradCarouselService.getInstance(options);
-
-    this.overlayService = LiquidCorp.BradOverlayService.getInstance({
-      id: "myCanvas",
-      color: "brad-bg-overlay-40"
-    });
+export class HomeComponent implements OnInit {
+  constructor(private appConfigService: AppConfigService) {
+    bridgeInvoker("setActionBarBack", this.appConfigService.device);
   }
-
-  open(target: string) {
-    this.overlayService.open(target);
-  }
-
-  updateTarget(target: string) {
-    this.overlayService.updateTarget(target);
-  }
-
-  close() {
-    this.overlayService.close();
-  }
-
+ 
+  ngOnInit(): void {}
+ 
   voltar(): void {
-    const urlRetorno = '/';
+    const urlRetorno =
+      this.appConfigService.info.urlAPI +
+      `bff-canais/bcpf_roteador/v1/bcpf-v1/clientes/self/contas/${this.appConfigService.storageHome.value?.dados.id}/redirecionamentos/HOME`;
     window.location.href = urlRetorno;
   }
-
 }
- 
