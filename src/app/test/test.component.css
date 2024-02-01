@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+	max-width: 600px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+  justify-content: center;
+  justify-items: center;
+}
+
+.grid-template-columns {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.flex-wrap{
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+.item-wrap{
+  display: flex;
+  flex-basis: 25%;
+  justify-content: center;
+}
+
+
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+  width: 56px;
+  height: 56px;
+}

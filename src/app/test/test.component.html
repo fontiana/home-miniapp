@@ -1,1 +1,17 @@
-<p>Testeeee</p>
+<body style="padding-bottom: 100vh;">
+  <input type="number" placeholder="quantidade de itens" #inputFlex (keyup)="additem()">
+
+  <p>Grid Template</p>
+  <section class=" grid grid-template-columns">
+    <div class="item" *ngFor="let item of qtde, let i = index">{{i}}</div>
+  </section>
+
+  <p>Display Flex e Flex-Wrap</p>
+  <section class="flex-wrap">
+    <div class="item-wrap" *ngFor="let item of qtde,let i = index">
+     <div class="item">
+        {{i}}
+      </div>
+    </div>
+  </section>
+</body>
