@@ -29,18 +29,15 @@ export class AppComponent {
       color: 'brad-bg-overlay-40',
     });
 
-    document.addEventListener(
-      'touchmove',
-      (event) => {
-        if (this.isTouchEvent(event)) {
-          const touchEvent = event as TouchEvent;
-          if (touchEvent.touches.length > 1) {
-            event.preventDefault();
-          }
-        }
-      },
-      { passive: false }
-    );
+    var doubleTouchStartTimestamp = 0;
+    document.addEventListener('touchstart', function (event) {
+      var now = +new Date();
+      if (doubleTouchStartTimestamp + 500 > now) {
+        console.log('prevented');
+        event.preventDefault();
+      }
+      doubleTouchStartTimestamp = now;
+    });
   }
 
   private isTouchEvent(event: any): event is TouchEvent {
