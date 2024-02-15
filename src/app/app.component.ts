@@ -19,7 +19,7 @@ export class AppComponent {
         slidesPerView: 2,
         initialSlide: 1,
         loop: false,
-        autoplay: { delay: 1000 },
+        autoplay: false,
       },
     };
     const service = LiquidCorp.BradCarouselService.getInstance(options);
