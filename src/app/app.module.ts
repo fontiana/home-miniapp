@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestComponent } from './test/test.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PopoverStepperComponent } from './components/popover-stepper/popover-stepper/popover-stepper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    PopoverStepperComponent
   ],
   imports: [
     BrowserModule,
