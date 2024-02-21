@@ -12,3 +12,8 @@ body {
   user-select: none;
   outline: none;
 }
+
+#debug {
+  margin: 5rem 0;
+  background: greenyellow;
+}
