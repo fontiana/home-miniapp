@@ -35,3 +35,23 @@
   </div>
   <!--Popover stepper end-->
 </section>
+
+<div class="brad-flex-start brad-font-paragraph-md brad-popover-default-section">
+  <a id="first" class="brad-text-link"
+    onclick="LiquidCorp.BradPopoverDefaultService.getInstance({'id': 'first-popover', 'idTarget':   'first'}).toggle();">
+    OPEN POPOVER!</a>
+  <div class="brad-popover-default" id="first-popover" role="dialog" aria-hidden=true>
+    <em class="brad-popover-default__triangle brad-popover-default__triangle-bottom"></em>
+    <div class="brad-popover-default__content" role="document" tabindex="-1">
+      <p class="brad-popover-default__title brad-font-title-sm" role="heading">
+        Título
+      </p>
+      <p class="brad-popover-default__text brad-font-subtitle-xs" role="document">
+        Conteúdo
+      </p>
+    </div>
+    <em role="button" aria-label="Fechar popover" class="brad-popover-default__close-icon"
+      onclick="LiquidCorp.BradPopoverDefaultService.getInstance({'id': 'first-popover', 'idTarget': 'first'}).close()">
+    </em>
+  </div>
+</div>
