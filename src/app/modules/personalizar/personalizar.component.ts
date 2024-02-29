@@ -308,6 +308,8 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     let timeoutDrag: any = null;
     const mycallTouchstart = (e: any) => {
+      console.log('abc')
+
       timeoutDrag = setTimeout(() => {
         this.appService.addLog({
           message: 'entrou no mycallTouchstart',
@@ -348,13 +350,14 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     const options = {
       targetSelector,
-      myDropCallback,
+      dropCallback: myDropCallback,
       clickCallback,
-      mycallTouchstart,
-      mycallTouchmove,
-      mycallTouchend,
+      touchstartCallback: mycallTouchstart,
+      touchmoveCallback: mycallTouchmove,
+      touchendCallback:mycallTouchend,
     };
     this.service = LiquidCorp.BradDragAndDropService.getInstance(options);
+    console.log(this.service)
   }
 
   validateClick(element: Element, e: any): void {
