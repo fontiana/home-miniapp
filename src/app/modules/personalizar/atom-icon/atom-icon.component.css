@@ -1,0 +1,14 @@
+.icon-d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.icon-ver-mais-cards {
+  height: 50%;
+}
+
+.icon-ver-mais-carousel {
+  margin-top: 17px;
+}
