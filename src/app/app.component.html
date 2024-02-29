@@ -1,6 +1,8 @@
 <router-outlet />
 <a class="nav-link" routerLink="/teste2">Teste navegar</a>
 <a class="nav-link" routerLink="/popover">Teste popover</a>
+<a class="nav-link" routerLink="/personalizar">Teste personalizar</a>
+<a class="nav-link" routerLink="/drag-and-drop">Teste drag-and-drop</a>
 <div id="debug">
 </div>
 
@@ -13,7 +15,9 @@
   <div class="modal__content">
     <div *ngFor="let log of logs$ | async; let i = index"
       [ngClass]="{'zebrado-par': i % 2 === 0, 'zebrado-impar': i % 2 !== 0}" class="modal__content--item">
-      <p>{{ log.message }} - {{ log.number }}</p>
+      <p>{{ log.message }}</p>
+      <span></span>
+      <p>row:{{ log.number }}</p>
     </div>
   </div>
 </div>
