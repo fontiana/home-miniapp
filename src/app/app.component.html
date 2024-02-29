@@ -1,4 +1,19 @@
 <router-outlet />
 <a class="nav-link" routerLink="/teste2">Teste navegar</a>
 <a class="nav-link" routerLink="/popover">Teste popover</a>
-<div id="debug"></div>
+<div id="debug">
+</div>
+
+<div id="modalLogs" *ngIf="(appService.showModal$ | async)">
+  <div class="modal__header">
+    <p (click)="closeModal()">X</p>
+    <span></span>
+    <p (click)="appService.limparLogs()">Limpar</p>
+  </div>
+  <div class="modal__content">
+    <div *ngFor="let log of logs$ | async; let i = index"
+      [ngClass]="{'zebrado-par': i % 2 === 0, 'zebrado-impar': i % 2 !== 0}" class="modal__content--item">
+      <p>{{ log.message }} - {{ log.number }}</p>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,45 @@
 .brad-flex {
     z-index: 1000;
 }
+
+#modalLogs{
+  z-index: 999;
+  display: block;
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.modal__header{
+  height: 3rem;
+  width: 100%;
+  background-color: chartreuse;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right:1rem ;
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+.modal__content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+.zebrado-par {
+  background-color: white;
+}
+
+.zebrado-impar {
+  background-color:lightblue;
+}
+
+.modal__content--item{
+  padding: 1rem;
+}
