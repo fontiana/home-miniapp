@@ -94,6 +94,11 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
       coordinateTo.indexContainer = 1;
     }
 
+    this.appService.addLog({
+      message: `coordinateTo ${coordinateTo.indexContainer}`,
+      number: 94,
+    });
+
     const temEspacoEmBranco =
       userOrder[0].find((x: string) => x === null) !== undefined;
 
@@ -177,6 +182,11 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
   */
   hideSlots(coordinateTo: { indexContainer: number; index: number }) {
     if (coordinateTo.indexContainer == 0) {
+      this.appService.addLog({
+        message: 'hideSlots',
+        number: 187,
+      });
+
       let userOrder = this.service.getResult();
       const dataIndex = this.service.getFirstSlotEmptyIndex(userOrder[1]);
       const elementCoordinateTarget = document.querySelector(
@@ -268,7 +278,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     const clickCallback = (e: any) => {
       console.log('clickCallback', e);
-      this.appService.addLog({ message: 'clickCallback', number: 264 });
+      this.appService.addLog({ message: 'clickCallback', number: 271 });
     };
 
     const myDropCallback = (e: any) => {
@@ -299,6 +309,10 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
     let timeoutDrag: any = null;
     const mycallTouchstart = (e: any) => {
       timeoutDrag = setTimeout(() => {
+        this.appService.addLog({
+          message: 'entrou no mycallTouchstart',
+          number: 302,
+        });
         e.container.dataset.draggable = true;
         this.service.markDrag();
       }, 700);
@@ -306,6 +320,11 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     const mycallTouchmove = (e: any) => {
       if (timeoutDrag) {
+        this.appService.addLog({
+          message: 'entrou no mycallTouchmove',
+          number: 309,
+        });
+
         clearTimeout(timeoutDrag);
         timeoutDrag = null;
       }
@@ -313,7 +332,10 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     const mycallTouchend = (e: any) => {
       console.log('TouchEnd');
-      this.appService.addLog({ message: 'TouchEnd', number: 304 });
+      this.appService.addLog({
+        message: 'entrou no mycallTouchend',
+        number: 304,
+      });
 
       if (timeoutDrag) {
         clearTimeout(timeoutDrag);
@@ -337,6 +359,10 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
   validateClick(element: Element, e: any): void {
     e.stopPropagation();
+    this.appService.addLog({
+      message: 'entrou no validateClick',
+      number: 287,
+    });
 
     element.classList.add('z-index-animation');
     this.clickHandler(e);
