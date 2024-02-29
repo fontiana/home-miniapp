@@ -1,10 +1,13 @@
-<router-outlet />
-<a class="nav-link" routerLink="/teste2">Teste navegar</a>
-<a class="nav-link" routerLink="/popover">Teste popover</a>
-<a class="nav-link" routerLink="/personalizar">Teste personalizar</a>
-<a class="nav-link" routerLink="/drag-and-drop">Teste drag-and-drop</a>
-<div id="debug">
+<div class="main__container">
+  <router-outlet />
+  <a class="nav-link" routerLink="/teste2">Teste navegar</a>
+  <a class="nav-link" routerLink="/popover">Teste popover</a>
+  <a class="nav-link" routerLink="/personalizar">Teste personalizar</a>
+  <a class="nav-link" routerLink="/drag-and-drop">Teste drag-and-drop</a>
+  <div id="debug">
+  </div>
 </div>
+
 
 <div id="modalLogs" *ngIf="(appService.showModal$ | async)">
   <div class="modal__header">
