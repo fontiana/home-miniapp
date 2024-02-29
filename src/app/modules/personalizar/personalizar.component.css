@@ -147,8 +147,7 @@
     width: calc(100% - 20px);
   }
 }
-*{
+body{
   user-select: none;
-
 }
 
