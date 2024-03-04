@@ -1,9 +1,13 @@
+*{
+  user-select: none;
+}
 
 .container__personalizar{
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding-top: 2rem;
+  user-select: none;
 }
 .cards-personalizar {
   display: grid;
@@ -146,8 +150,5 @@
   .withoutScroll {
     width: calc(100% - 20px);
   }
-}
-body{
-  user-select: none;
 }
 
