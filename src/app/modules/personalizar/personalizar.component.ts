@@ -277,7 +277,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
     console.info('[personalizar.component.ts]', '(ngAfterViewInit)');
 
     const clickCallback = (e: any) => {
-      console.log('clickCallback', e);
+      this.clickHandler(e)
       this.appService.addLog({ message: 'clickCallback', number: 271 });
     };
 
@@ -308,8 +308,6 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     let timeoutDrag: any = null;
     const mycallTouchstart = (e: any) => {
-      console.log('abc')
-
       timeoutDrag = setTimeout(() => {
         this.appService.addLog({
           message: 'entrou no mycallTouchstart',
