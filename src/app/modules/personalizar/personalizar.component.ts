@@ -308,7 +308,6 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
     let timeoutDrag: any = null;
     const mycallTouchstart = (e: any) => {
-      e.preventDefault()
       timeoutDrag = setTimeout(() => {
         this.appService.addLog({
           message: 'entrou no mycallTouchstart',
