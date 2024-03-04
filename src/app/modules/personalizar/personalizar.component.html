@@ -1,90 +1,62 @@
-<div class="container__personalizar">
+<div>
   <div id="drag1" class="brad-drag-and-drop relative overflow-hidden brad-drag-and-drop-limit">
-
-    <div class="content-horizontal-spacing brad-drag-and-drop__container cards-personalizar containerFavoritos"
-      id="favoritosPersonalizar" data-draggable="false">
-      <div class="brad-drag-and-drop__slot brad-rounded-lg" #node
+    <div
+      class="content-horizontal-spacing brad-drag-and-drop__container cards-personalizar containerFavoritos"
+      id="favoritosPersonalizar"
+      data-draggable="false"
+    >
+      <div
+        class="card-item brad-flex"
         *ngFor="let cardFav of cardsPersonalizar.slice(0, 7); index as i"
-        [attr.tabindex]="node.hasChildNodes() ? null : 0" [attr.role]="node.hasChildNodes() ? null : 'contentinfo'"
-        [attr.data-empty-card]="node.hasChildNodes() ? null : true" [attr.aria-label]="
-          node.hasChildNodes()
-            ? null
-            : ({
-                title: 'Espaço vazio',
-                index: i,
-                size: cardsPersonalizar.slice(0, 7).length + 1
-              } | a11yButtonLabel)
-        ">
-        <div class="brad-drag-and-drop__content" #drag_content1 [id]="cardFav.id"
-          (click)="validateClick(drag_content1, $event)">
-          <div class="card btn">
-            <div id="divIcon" class="icon brad-card brad-card--default brad-rounded-lg" [attr.for]="cardFav.id"
-              (click)="validateClick(drag_content1, $event)">
-              <app-atom-icon [name]="cardFav.icone" color="neutral-40" size="sm" />
-            </div>
-            <div class="position-tag" [attr.for]="cardFav.id" (click)="validateClick(drag_content1, $event)">
-              <app-atom-icon [name]="cardFav.container === 0 ? 'feedback-error-delete' : 'feedback-plus-add'"
-                color="neutral-40" size="xxs" [attr.aria-label]="cardFav.title" role="button" tabindex="0"
-                [attr.aria-label]="
-                  {
-                    title:
-                      cardFav.title +
-                      '. ' +
-                      (cardFav.container === 0
-                        ? 'Remover dos favoritos'
-                        : 'Adicionar aos favoritos'),
-                    index: cardFav.position,
-                    size:
-                      cardFav.container === 0
-                        ? cardsPersonalizar.slice(0, 7).length + 1
-                        : undefined,
-                    matriz: cardFav.container === 1 ? 4 : undefined
-                  } | a11yButtonLabel
-                " />
-            </div>
-            <p class="label brad-font-subtitle-xxs card-label brad-flex brad-flex-justify-content-center"
-              aria-hidden="true">
-              {{ cardFav.title }}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="slot-cardSalvar">
-        <div id="cardSalvar" (click)="handlePersonalization()" role="button"
-          [tabindex]="blankSpacesInFavorites === 0 ? 0 : -1" [attr.aria-label]="
-            {
-              title: 'Salvar personalização',
-              index: 7,
-              size: cardsPersonalizar.slice(0, 7).length + 1
-            } | a11yButtonLabel
-          ">
-          <div class="icon brad-card brad-card--default brad-rounded-lg" aria-hidden="true">
-            <app-atom-icon name="ui-save" size="sm" color="neutral-40"></app-atom-icon>
-
-          </div>
-          <p class="label brad-font-subtitle-xxs" aria-hidden="true">Salvar</p>
-        </div>
-      </div>
-      <hr class="hr-personalizar" />
-    </div>
-    <section class="content-horizontal-spacing container-mais-servicos"
-      [class.container-padding__spacing-ios]="isIosWithoutBt">
-      <h2 id="maisServicosLabel" class="brad-font-paragraph-md brad-m-sm-t brad-m-sm-b" tabindex="0">
-        Mais serviços
-      </h2>
-      <div class="brad-drag-and-drop__container cards-personalizar" #maisServicos id="maisServicos"
-        data-draggable="false">
-        <div class="brad-drag-and-drop__slot brad-rounded-lg"
-          *ngFor="let cardFav of cardsPersonalizar.slice(7, cardsPersonalizar.length); index as i">
-          <div class="brad-drag-and-drop__content" #drag_content2 [id]="cardFav.id"
-            (click)="validateClick(drag_content2, $event)">
+      >
+        <div
+          class="brad-drag-and-drop__slot brad-rounded-lg"
+          #node
+          [attr.tabindex]="node.hasChildNodes() ? null : 0"
+          [attr.role]="node.hasChildNodes() ? null : 'contentinfo'"
+          [attr.data-empty-card]="node.hasChildNodes() ? null : true"
+          [attr.aria-label]="
+            node.hasChildNodes()
+              ? null
+              : ({
+                  title: 'Espaço vazio',
+                  index: i,
+                  size: cardsPersonalizar.slice(0, 7).length + 1
+                } | a11yButtonLabel)
+          "
+        >
+          <div
+            class="brad-drag-and-drop__content"
+            #drag_content1
+            [id]="cardFav.id"
+            (click)="validateClick(drag_content1, $event)"
+          >
             <div class="card btn">
-              <div id="divIcon" class="icon brad-card brad-card--default brad-rounded-lg">
-                <app-atom-icon [name]="cardFav.icone" color="neutral-40" size="sm" />
+              <div
+                id="divIcon"
+                class="icon brad-card brad-card--default brad-rounded-lg"
+                [attr.for]="cardFav.id"
+                (click)="validateClick(drag_content1, $event)"
+              >
+                <app-atom-icon
+                  [name]="cardFav.icone"
+                  [color]="'primary'"
+                  size="sm"
+                />
               </div>
-              <div class="position-tag">
-                <app-atom-icon [name]="cardFav.container === 0 ? 'feedback-error-delete' : 'feedback-plus-add'"
-                  color="neutral-40" size="xxs" role="button" tabindex="0" [attr.aria-label]="
+              <div
+                class="position-tag"
+                [attr.for]="cardFav.id"
+                (click)="validateClick(drag_content1, $event)"
+              >
+                <app-atom-icon
+                  [name]="cardFav.container === 0 ? 'feedback-error-delete' : 'feedback-plus-add'"
+                  [color]="'primary'"
+                  size="xxs"
+                  [attr.aria-label]="cardFav.title"
+                  role="button"
+                  tabindex="0"
+                  [attr.aria-label]="
                     {
                       title:
                         cardFav.title +
@@ -99,17 +71,132 @@
                           : undefined,
                       matriz: cardFav.container === 1 ? 4 : undefined
                     } | a11yButtonLabel
-                  " />
+                  "
+                />
               </div>
-              <p class="label brad-font-subtitle-xxs card-label brad-flex brad-flex-justify-content-center"
-                aria-hidden="true">
+              <p
+                class="label brad-font-subtitle-xxs card-label brad-flex brad-flex-justify-content-center"
+                aria-hidden="true"
+              >
                 {{ cardFav.title }}
               </p>
             </div>
           </div>
         </div>
-        <div #slotVazio class="brad-drag-and-drop__slot brad-rounded-md brad-m-xs"
-          *ngFor="let item of [].constructor(7)" [hidden]="true"></div>
+      </div>
+
+      <div class="slot-cardSalvar card-item brad-flex">
+        <div
+          id="cardSalvar"
+          (click)="handlePersonalization()"
+          role="button"
+          [tabindex]="blankSpacesInFavorites === 0 ? 0 : -1"
+          [attr.aria-label]="
+            {
+              title: 'Salvar personalização',
+              index: 7,
+              size: cardsPersonalizar.slice(0, 7).length + 1
+            } | a11yButtonLabel
+          "
+        >
+          <div class="icon brad-card brad-card--default brad-rounded-lg" aria-hidden="true">
+            <app-atom-icon
+              name="ui-save"
+              size="sm"
+              [color]="
+                blankSpacesInFavorites > 0
+                  ? 'neutral-40'
+                  : 'primary'
+              "
+            />
+          </div>
+          <p class="label brad-font-subtitle-xxs" aria-hidden="true">Salvar</p>
+        </div>
+      </div>
+      <hr class="hr-personalizar" />
+    </div>
+    <section
+      class="content-horizontal-spacing container-mais-servicos"
+      [class.container-padding__spacing-ios]="isIosWithoutBt"
+    >
+      <h2
+        id="maisServicosLabel"
+        class="brad-font-paragraph-md brad-m-sm-t brad-m-sm-b"
+        tabindex="0"
+      >
+        Mais serviços
+      </h2>
+      <div
+        class="brad-drag-and-drop__container cards-personalizar"
+        #maisServicos
+        id="maisServicos"
+        data-draggable="false"
+      >
+        <div
+          class="card-item brad-flex"
+          *ngFor="let cardFav of cardsPersonalizar.slice(7, cardsPersonalizar.length); index as i"
+        >
+          <div class="brad-drag-and-drop__slot brad-rounded-lg">
+            <div
+              class="brad-drag-and-drop__content"
+              #drag_content2
+              [id]="cardFav.id"
+              (click)="validateClick(drag_content2, $event)"
+            >
+              <div class="card btn">
+                <div id="divIcon" class="icon brad-card brad-card--default brad-rounded-lg">
+                  <app-atom-icon
+                    [name]="cardFav.icone"
+                    [color]="'primary'"
+                    size="sm"
+                  />
+                </div>
+                <div class="position-tag">
+                  <app-atom-icon
+                    [name]="cardFav.container === 0 ? 'feedback-error-delete' : 'feedback-plus-add'"
+                    [color]="'primary'"
+                    size="xxs"
+                    role="button"
+                    tabindex="0"
+                    [attr.aria-label]="
+                      {
+                        title:
+                          cardFav.title +
+                          '. ' +
+                          (cardFav.container === 0
+                            ? 'Remover dos favoritos'
+                            : 'Adicionar aos favoritos'),
+                        index: cardFav.position,
+                        size:
+                          cardFav.container === 0
+                            ? cardsPersonalizar.slice(0, 7).length + 1
+                            : undefined,
+                        matriz: cardFav.container === 1 ? 4 : undefined
+                      } | a11yButtonLabel
+                    "
+                  />
+                </div>
+                <p
+                  class="label brad-font-subtitle-xxs card-label brad-flex brad-flex-justify-content-center"
+                  aria-hidden="true"
+                >
+                  {{ cardFav.title }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="brad-flex"
+          [class.card-item]="slotVazio.hasChildNodes()"
+          *ngFor="let item of [].constructor(7)"
+        >
+          <div
+            #slotVazio
+            class="brad-drag-and-drop__slot brad-rounded-md brad-m-xs"
+            [hidden]="true"
+          ></div>
+        </div>
       </div>
     </section>
   </div>
