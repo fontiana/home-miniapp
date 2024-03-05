@@ -256,6 +256,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     document.addEventListener("contextmenu", function(event) {
+      window.alert('contextMenu Triggered')
       event.preventDefault()
   });
     console.info('[personalizar.component.ts]', '(ngOnInit)');
