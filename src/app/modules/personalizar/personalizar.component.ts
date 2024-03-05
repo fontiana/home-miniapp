@@ -318,7 +318,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
         });
         e.container.dataset.draggable = true;
         this.service.markDrag();
-      }, 700);
+      }, 300);
     };
 
     const mycallTouchmove = (e: any) => {
