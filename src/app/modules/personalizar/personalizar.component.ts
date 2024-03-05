@@ -255,6 +255,9 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault()
+  });
     console.info('[personalizar.component.ts]', '(ngOnInit)');
 
     this.cardsInitial = this.cards.slice(0, 7).map((item) => item.index);
@@ -372,6 +375,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
       element.classList.remove('z-index-animation');
     }, 1000);
   }
+
 }
 
 const mockCards = [
