@@ -7,6 +7,8 @@ import { A11yPipeButtonLabel } from './personalizar/a11y-button-label.pipe';
 import { IconComponent } from './personalizar/atom-icon/atom-icon.component';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { PopoverComponent } from './popover-stepper/popover-stepper.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +23,8 @@ const routes: Routes = [
     PersonalizarComponent,
     A11yPipeButtonLabel,
     IconComponent,
+    PopoverComponent,
   ],
-  imports: [RouterModule.forChild(routes), CommonModule],
+  imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
 })
 export class HomeModule {}
