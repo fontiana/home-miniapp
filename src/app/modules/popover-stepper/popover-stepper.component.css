@@ -2,9 +2,11 @@
 	display:flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem;
 }
 
 .cards-personalizar {
