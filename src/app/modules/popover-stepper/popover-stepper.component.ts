@@ -31,7 +31,7 @@ export class PopoverComponent implements AfterViewInit {
   list = [
     {
       id: '1',
-      text: 'Utilizando Span <span class="brad-font-weight-bold brad-font-paragraph-sm brad-text-color-neutral-0"> Favoritos </span>como quiser. Quer ver como fazer?',
+      text: 'Utilizando Span <span aria-label="Favoritos" class="brad-font-weight-bold brad-font-paragraph-sm brad-text-color-neutral-0"> Favoritos </span>como quiser. Quer ver como fazer?',
       target: 'firstStepTutorial',
     },
     {
