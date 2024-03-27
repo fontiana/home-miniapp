@@ -16,7 +16,6 @@ export class PopoverStepperComponent implements AfterViewInit{
       list: this.list,
       currentItem: this.list[0],
       direction: "bottom",
-      idOverlay: "myCanvas",
     });
 
     this.overlayService = LiquidCorp.BradOverlayService.getInstance({
