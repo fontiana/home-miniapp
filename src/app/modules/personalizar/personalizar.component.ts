@@ -53,7 +53,46 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
   // 5401: Enviar para o GA a personalização do usuário
   cardsInitial: number[] = [];
 
-  constructor(public appService: AppService) {}
+  constructor(public appService: AppService) { }
+
+  overlayService: any;
+  popoverService: any
+
+  list = [
+    {
+      id: "1",
+      text: "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices venenatis diam a commodo. Maecenas nulla arcu, auctor aliquam mauris non, vehicula eleifend nisl.",
+      target: "target-345",
+    },
+    {
+      id: "2",
+      text: "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices venenatis diam a commodo. Maecenas nulla arcu, auctor aliquam mauris non, vehicula eleifend nisl.",
+      target: "target-2",
+    },
+    {
+      id: "3",
+      text: "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices venenatis diam a commodo. Maecenas nulla arcu, auctor aliquam mauris non, vehicula eleifend nisl.",
+      target: "target-3",
+    },
+  ];
+
+  closeTutorial() {
+    this.overlayService.close();
+    this.popoverService.close();
+  }
+  openTutorial(idTarget: any) {
+    this.popoverService.open();
+    this.popoverService.resetStepper(idTarget);
+    this.overlayService.open(idTarget);
+  }
+  prevTutorial() {
+    this.popoverService.prevStepper();
+    this.overlayService.updateTarget(this.popoverService.stepper.currentItem.target);
+  }
+  nextTutorial() {
+    this.popoverService.nextStepper();
+    this.overlayService.updateTarget(this.popoverService.stepper.currentItem.target);
+  }
 
   public changedLists(): void {
     console.info('[personalizar.component.ts]', '(changedLists)');
@@ -255,10 +294,10 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    document.addEventListener("contextmenu", function(event) {
+    document.addEventListener("contextmenu", function (event) {
       window.alert('contextMenu Triggered')
       event.preventDefault()
-  });
+    });
     console.info('[personalizar.component.ts]', '(ngOnInit)');
 
     this.cardsInitial = this.cards.slice(0, 7).map((item) => item.index);
@@ -277,6 +316,22 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     const targetSelector = '#drag1'; // ou .classe
+
+
+    this.popoverService = LiquidCorp.BradPopoverService.getInstance({
+      id: "popover-151",
+      idTarget: "target-345",
+      list: this.list,
+      currentItem: this.list[0],
+      direction: "bottom",
+      idOverlay: "myCanvas",
+    });
+
+    this.overlayService = LiquidCorp.BradOverlayService.getInstance({
+      id: "myCanvas",
+      color: 'brad-bg-overlay-60'
+    });
+    console.log(this.popoverService)
 
     console.info('[personalizar.component.ts]', '(ngAfterViewInit)');
 
@@ -356,7 +411,7 @@ export class PersonalizarComponent implements AfterViewInit, OnInit {
       clickCallback,
       touchstartCallback: mycallTouchstart,
       touchmoveCallback: mycallTouchmove,
-      touchendCallback:mycallTouchend,
+      touchendCallback: mycallTouchend,
     };
     this.service = LiquidCorp.BradDragAndDropService.getInstance(options);
     console.log(this.service)
