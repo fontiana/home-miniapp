@@ -1,0 +1,89 @@
+.container{
+	display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.cards-personalizar {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.personalizar {
+  height: calc(100vh - (100px + 242px + 25px + 150px));
+  overflow: scroll;
+}
+
+.mostrar-cards {
+  padding-bottom: 50px;
+}
+
+.fixedWaves {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+}
+.fixedWaves .brad-waves::after {
+  background-color: white;
+}
+
+#firstStepTutorial {
+  position: absolute;
+  top: 460px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 15px;
+}
+
+@media (max-height: 695px) {
+  #firstStepTutorial {
+    top: calc(100% - 240px);
+  }
+}
+.pularPersonalizarTutorial {
+  bottom: 55px;
+  left: 50%;
+  position: fixed;
+  transform: translateX(-50%);
+}
+
+.pularAvisoPersonalizarTutorial {
+  bottom: 0;
+  position: absolute;
+}
+
+.fixed::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.descritivo-step3Tutorial {
+  font-size: 0.8em;
+}
+
+.padding-top-step3Tutorial {
+  padding-top: 25px;
+}
+
+.waves-step3Tutorial {
+  z-index: 13;
+  position: absolute;
+}
+
+#popoverTutorial {
+  [role='button'] > p,
+  p[role='button'] {
+    text-decoration: underline;
+    font-size: 14px;
+  }
+}
