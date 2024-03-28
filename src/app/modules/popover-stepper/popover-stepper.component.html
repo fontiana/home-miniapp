@@ -1,18 +1,17 @@
 <!--Overlay start-->
 <canvas id="myCanvas" class="brad-overlay hidden" (click)="closeTutorial();"></canvas>
 <!--Overlay end-->
-
-<section class="container">
-  <select [(ngModel)]="selectedOption" (ngModelChange)="onSelectionChange($event)">
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-    <option value="4">Option 4</option>
-  </select>
+<section>
   <div class="brad-flex brad-flex-justify-content-center brad-font-paragraph-md ">
-    <a id="target-345" class="brad-text-link brad-p-sm" (click)="openTutorial('target-345', 0);"
-      role="button">PopOver</a>
+    <a id="target-345" class="brad-text-link brad-p-sm" (click)="openTutorial('target-345');" role="button"> Step 1</a>
   </div>
+  <div id="target-2" class="brad-card brad-card--default brad-p-lg">
+    <div>
+      <h1>Step 2</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </div>
+  </div>
+  <button id="target-3" class="brad-btn brad-btn-primary brad-m-xl-t brad-p-sm">Step 3</button>
   <!--Popover stepper start-->
   <div class="brad-popover brad-popover-stepper" id="popover-151" role="dialog">
     <em class="brad-popover__triangle"></em>
