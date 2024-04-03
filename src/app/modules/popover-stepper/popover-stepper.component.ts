@@ -38,7 +38,12 @@ export class PopoverComponent implements AfterViewInit{
     },
     {
       id: "3",
-      text: "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices venenatis diam a commodo. Maecenas nulla arcu, auctor aliquam mauris non, vehicula eleifend nisl.",
+      text: "Primeiro, toque em <em class='negrito'>Personalizar</em>",
+      target: "target-3",
+    },
+    {
+      id: "4",
+      text: "Aqui você confere todos os serviços e deixa a área de <b role='text' class='negrito'> Favoritos </b>como quiser. Quer ver como fazer?",
       target: "target-3",
     },
   ];
