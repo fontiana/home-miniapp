@@ -38,7 +38,7 @@ export class PopoverComponent implements AfterViewInit{
     },
     {
       id: "3",
-      text: "Primeiro, toque em <em class='negrito'>Personalizar</em>",
+      text: "Primeiro, toque em personalizar",
       target: "target-3",
     },
     {
