@@ -38,8 +38,8 @@ export class PopoverComponent implements AfterViewInit {
     },
 {
   id: "3",
-    text: "Primeiro, toque em <div>personalizar</div>",
-      target: "target-3",
+    text: '<h1>This is a <span aria-hidden="true">t<strong>e</strong>st</span><span style="position: absolute; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden;">test</span>.</h1>',
+      target: "target-3"
     },
 {
   id: "4",
