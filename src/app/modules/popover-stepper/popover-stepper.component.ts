@@ -28,12 +28,12 @@ export class PopoverComponent implements AfterViewInit {
   list = [
     {
       id: "1",
-      text: 'Aqui você confere todos os serviços e deixa a área de <span class="negrito" aria-hidden="true"> Favoritos </span> <div class="sr- only" style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);white - space: nowrap;border - width: 0;">Favoritos</div> como quiser. Quer ver como fazer?',
+      text: 'Aqui você confere todos os serviços e deixa a área de <span class="negrito" aria-hidden="true"> Favoritos </span> como quiser. Quer ver como fazer?',
     target: "target-345",
     },
 {
   id: "2",
-    text: 'Primeiro, toque em <div style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);white - space: nowrap;border - width: 0;">Personalizar</div>',
+    text: 'Primeiro, toque em<div>Personalizar</div>',
       target: "target-2",
     },
 {

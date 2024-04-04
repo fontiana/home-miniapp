@@ -19,8 +19,8 @@
       <span></span>
       <a class="bps-close" (click)="closeTutorial();" role="button">Fechar tutorial</a>
     </div>
-    <div class="brad-popover__content">
-      <p class="brad-popover__text brad-font-subtitle-xs"></p>
+    <div class="brad-popover__content" [attr.aria-label]="popoverText.textContent">
+      <p class="brad-popover__text brad-font-subtitle-xs" #popoverText aria-hidden="true"></p>
     </div>
     <div class="brad-flex  brad-flex-justify-content-between brad-popover-stepper__actions brad-m-sm-t">
       <div class="brad-flex  brad-flex-align-items-center bps-prev bps-hidden" (click)="prevTutorial()" role="button">
