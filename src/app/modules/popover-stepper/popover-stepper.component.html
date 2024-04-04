@@ -13,14 +13,14 @@
   </div>
   <button id="target-3" class="brad-btn brad-btn-primary brad-m-xl-t brad-p-sm">Step 3</button>
   <!--Popover stepper start-->
-  <div class="brad-popover brad-popover-stepper" id="popover-151">
+  <div class="brad-popover brad-popover-stepper" id="popover-151"   role="dialog" aria-labelledby="popover-content">
     <em class="brad-popover__triangle"></em>
     <div class="brad-flex  brad-flex-justify-content-between brad-popover-stepper__actions  brad-m-sm-b">
       <span></span>
       <a class="bps-close" (click)="closeTutorial();" role="button">Fechar tutorial</a>
     </div>
-    <div class="brad-popover__content">
-      <p class="brad-popover__text brad-font-subtitle-xs"></p>
+    <div class="brad-popover__content" aria-hidden="true" id="popover-content">
+      <p class="brad-popover__text brad-font-subtitle-xs" aria-hidden="true"></p>
     </div>
     <div class="brad-flex  brad-flex-justify-content-between brad-popover-stepper__actions brad-m-sm-t">
       <div class="brad-flex  brad-flex-align-items-center bps-prev bps-hidden" (click)="prevTutorial()" role="button">
