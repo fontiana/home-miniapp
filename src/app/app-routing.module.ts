@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PopoverStepperComponent } from './components/popover-stepper/popover-stepper/popover-stepper.component';
 import { PopoverComponent } from './modules/popover-stepper/popover-stepper.component';
 
