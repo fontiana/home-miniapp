@@ -1,6 +1,6 @@
-/* html, body {
+html, body, img {
   touch-action: manipulation;
-} */
+}
 
 
 #debug {
