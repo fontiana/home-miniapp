@@ -2,15 +2,6 @@
   touch-action: manipulation;
 } */
 
-body {
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: none;
-}
 
 #debug {
   margin: 2rem 0;
