@@ -13,14 +13,14 @@
   </div>
   <button id="target-3" class="brad-btn brad-btn-primary brad-m-xl-t brad-p-sm">Step 3</button>
   <!--Popover stepper start-->
-  <div class="brad-popover brad-popover-stepper" id="popover-151" role="dialog">
+  <div class="brad-popover brad-popover-stepper" id="popover-151">
     <em class="brad-popover__triangle"></em>
     <div class="brad-flex  brad-flex-justify-content-between brad-popover-stepper__actions  brad-m-sm-b">
       <span></span>
       <a class="bps-close" (click)="closeTutorial();" role="button">Fechar tutorial</a>
     </div>
-    <div class="brad-popover__content" role="document">
-      <p class="brad-popover__text brad-font-subtitle-xs" role="document"></p>
+    <div class="brad-popover__content" [attr.aria-label]="popoverText.textContent">
+      <p class="brad-popover__text brad-font-subtitle-xs" #popoverText aria-hidden="true"></p>
     </div>
     <div class="brad-flex  brad-flex-justify-content-between brad-popover-stepper__actions brad-m-sm-t">
       <div class="brad-flex  brad-flex-align-items-center bps-prev bps-hidden" (click)="prevTutorial()" role="button">
@@ -36,22 +36,3 @@
   <!--Popover stepper end-->
 </section>
 
-<div class="brad-flex-start brad-font-paragraph-md brad-popover-default-section">
-  <a id="first" class="brad-text-link"
-    onclick="LiquidCorp.BradPopoverDefaultService.getInstance({'id': 'first-popover', 'idTarget':   'first'}).toggle();">
-    OPEN POPOVER!</a>
-  <div class="brad-popover-default" id="first-popover" role="dialog" aria-hidden=true>
-    <em class="brad-popover-default__triangle brad-popover-default__triangle-bottom"></em>
-    <div class="brad-popover-default__content" role="document" tabindex="-1">
-      <p class="brad-popover-default__title brad-font-title-sm" role="heading">
-        Título
-      </p>
-      <p class="brad-popover-default__text brad-font-subtitle-xs" role="document">
-        Conteúdo
-      </p>
-    </div>
-    <em role="button" aria-label="Fechar popover" class="brad-popover-default__close-icon"
-      onclick="LiquidCorp.BradPopoverDefaultService.getInstance({'id': 'first-popover', 'idTarget': 'first'}).close()">
-    </em>
-  </div>
-</div>
