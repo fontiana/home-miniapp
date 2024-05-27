@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PopoverComponent } from './popover-stepper/popover-stepper.component';
 import { FormsModule } from '@angular/forms';
+import { CarouselComponent } from './carousel/carousel.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     A11yPipeButtonLabel,
     IconComponent,
     PopoverComponent,
+    CarouselComponent
   ],
   imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
 })
