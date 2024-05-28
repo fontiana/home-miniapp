@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   constructor(public appService: AppService) {}
   ngOnInit(): void {
     this.logs$ = this.appService.logsSubject.asObservable();
+    alert("teste");
   }
   closeModal() {
     this.appService.toggleModal();
