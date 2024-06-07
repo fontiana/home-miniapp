@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { PopoverStepperComponent } from './components/popover-stepper/popover-stepper/popover-stepper.component';
 import { PopoverComponent } from './modules/popover-stepper/popover-stepper.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
       import('./modules/home.module').then((m) => m.HomeModule),
     canActivate: [],
   },
+  { path: 'login', component: LoginComponent },
   { path: 'popover', component: PopoverStepperComponent },
   { path: 'popover-two', component: PopoverComponent },
 ];

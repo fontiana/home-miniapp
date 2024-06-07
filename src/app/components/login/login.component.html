@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="tela">
+    <app-login-senha *ngSwitchCase="'inicio'" (click)="onSenha4()"></app-login-senha>
+    <app-login-dispositivo *ngSwitchCase="'dispositivo'"></app-login-dispositivo>
+</ng-container>
+
+<a (click)="voltar()">Voltar</a>
